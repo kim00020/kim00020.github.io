@@ -7,10 +7,10 @@
 
 # Site settings
 gems: [jekyll-paginate]
-title: JK Stat
+title: 통계학 이야기 
 email: jkim@iastate.edu
 description: > # this means to ignore newlines until "baseurl:"
-  A blog about Life, Universe and Coding. But mostly Coding.
+  김재광 교수의 풀어쓴 통계학 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://jaekwangkim.com" # the base hostname & protocol for your site
 twitter_username: TWRITTER_USERNAME
