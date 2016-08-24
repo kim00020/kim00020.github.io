@@ -1,20 +1,19 @@
-# Permalinks
-permalink:           pretty
-
-# Setup
-title:               통계 이야기 
-url:                 http://kim00020.github.io
-paginate:            2
-baseurl:             ""
-
-#tagline:             Jae-kwang Kim
-
-# Assets
+# Welcome to Jekyll!
 #
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+gems: [jekyll-paginate]
+title: Statistical Notes 
+email: jkim@iastate.edu
+description: > # this means to ignore newlines until "baseurl:"
+  Statistical Notes by J.K. Kim 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://jaekwangkim.com" # the base hostname & protocol for your site
+
 
 # About/contact
 author:
@@ -22,20 +21,21 @@ author:
   url:               https://public.jkim.iastate.edu
   email:             jkim@iastate.edu
 
-# page list
-pages_list:       
-  About: '/about'
-  Archive: '/archive'
-  Feed: '/atom.xml'
 
-# Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
-
-# Gems
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-
+#twitter_username: TWRITTER_USERNAME
+github_username: kim00020
+sass:
+  style: compressed
+# Pagination
+paginate: 5
+paginate_path: "page:num"
+# Build settings
 markdown: kramdown
+
+# Newsletter URL
+# mailchimp: "//bitwiser.us10.list-manage.com/subscribe/post?u=98dffea21944db66c8fa221ec&amp;id=8cc0f04ed1"
+
+# Analytics
+# ga_id: UA-47902363-1
+# ga_domain: bitwiser.in
+# disqus: bitwiser
