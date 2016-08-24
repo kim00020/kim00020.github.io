@@ -7,7 +7,7 @@ tags: [python, pocket]
 ---
 
 
-테스트 
+??? ???. 
 
 
 
