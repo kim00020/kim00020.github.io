@@ -6,6 +6,9 @@ date: 2016-06-09 12:30:00
 tags: [python, pocket]
 ---
 
+
+??? ?? ??
+
 This tutorial will show how to extract only the relevant html from any article or blog post by their URL in **Python**.
 
 Most of us have used [Pocket](https://getpocket.com/) app on our phones or browsers to save links and read them later. It is kind of like a bookmark app but which also saves the link's contents. After adding the link to Pocket, you can see that it extracts only the main content of the article and discards other things like the websites's footer, menu, sidebar (if any), user comments, etc. We will not be getting into the algorithm related to identifying the html tag with the most amount of text content. You can read the discussion here on [stackoverflow](http://stackoverflow.com/questions/3652657/what-algorithm-does-readability-use-for-extracting-text-from-urls) about the algorithms.
