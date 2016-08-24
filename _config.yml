@@ -7,7 +7,7 @@
 
 # Site settings
 gems: [jekyll-paginate]
-title: Statistical Notes 
+title: 통계학 노트 
 email: jkim@iastate.edu
 description: > # this means to ignore newlines until "baseurl:"
   Statistical Notes by J.K. Kim 
