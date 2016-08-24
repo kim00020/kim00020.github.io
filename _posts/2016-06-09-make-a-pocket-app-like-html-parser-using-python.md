@@ -7,7 +7,10 @@ tags: [python, pocket]
 ---
 
 
-??? ?? ??
+테스트 
+
+
+
 
 This tutorial will show how to extract only the relevant html from any article or blog post by their URL in **Python**.
 
