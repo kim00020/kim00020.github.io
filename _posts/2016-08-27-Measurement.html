@@ -126,14 +126,13 @@ $(document).ready(function () {
 <div class="section level2">
 <h2>예제</h2>
 <p>보건 복지부 산하 어느 연구 기관에서 보건 관련 통계를 매년 생산하고자 한다. 표본 가구를 방문하여 가구원을 대상으로 보건 관련 설문 조사를 하는 방안과 그들의 건강 상태를 의료 검진을 통하여 직접 측정하는 방안을 가지고 고민하는 중이다. 설문조사는 일인당 1만원의 조사 비용이 들고 의료검진은 1인당 10만원의 조사 비용이 든다. 전체 예산이 1억이라고 하면 설문조사는 1만명을 조사할수 있고 의료검진으로는 1천명만을 조사하게 된다.</p>
-<p>이에 대해 통계학자가 제안한 새로운 방법은 5천명에 대해 일단 설문조사를 한후에 그 중에서 5백명을 랜덤하게 뽑아 의료검진을 하여 이를 결합하는 방법이 더 나을 것이라 주장하였다.</p>
+<p>이에 대해 어느 통계학자는 5천명에 대해 일단 설문조사를 한후에 그 중에서 5백명을 랜덤하게 뽑아 의료검진을 하여 이를 결합하는 방법이 더 나을 것이라 주장하였다.</p>
 </div>
 <div class="section level2">
 <h2>풀이</h2>
 <p>건강이라는 추상적인 개념을 측정하는 방법은 위의 예처럼 여러가지가 있을수 있을 것입니다. 어떠한 측정을 사용할 것인가는 측정의 정확성 (및 관련성)과 측정과 관련된 비용의 문제로 귀결될수 있을 것입니다. 보다 정확한 측정법을 사용하는 것이 좋겠지만 이는 대부분의 경우 비용의 증가를 초래합니다. 저렴한 측정법은 비용을 낮추지만 정확도를 떨어트리고 비싼 측정법을 도입하면 정확도를 높히지만 비용이 증가합니다.</p>
 <p>통계학자가 제안한 새로운 방법은 이 두 방법의 절충으로써 종종 two-phase sampling (또는 double sampling) 이라고 부르는 방법입니다. 원하는 변수는 Y 이지만 관련된 변수 X 를 먼저 관측하고 그 중에서 일부에서는 Y 를 함께 관측하여 X 를 사용함으로써 발생하는 편향을 보정하고자 하는 방법입니다. 즉, 전체 자료에서 일부는 (X,Y) 를 관측하고 나머지는 X 만 관측하는 Planned Missing Data Design 이 되는 것입니다.</p>
-<p>두 변수 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span> 은 서로 연관이 있으므로 다음과 같은 회귀 모형을 세울수 있을 것입니다.</p>
-<p><span class="math display">\[ Y=f(X; \beta)+e , \  \  \  E(e)=0.\]</span> 여기서 <span class="math inline">\(f(\cdot)\)</span>는 알려진 회귀 모형 함수이고 <span class="math inline">\(\beta\)</span>는 모형을 결정짓는 모수 (parameter)인데, 예를 들어 <span class="math inline">\(f(X; \beta)=\beta_0 + \beta_1 X\)</span> 이면 단순 회귀 모형이 되는 것입니다. 따라서 <span class="math inline">\(\beta_0=0\)</span> 이고 <span class="math inline">\(\beta_1=1\)</span> 이라면 변수 <span class="math inline">\(X\)</span>를 사용한 측정은 측정 편향이 없다고 이야기 할수 있고 그렇지 않으면 측정 편향이 있는 것입니다.</p>
+<p>두 변수 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span> 은 서로 연관이 있으므로 다음과 같은 회귀 모형을 세울수 있을 것입니다. <span class="math display">\[ Y=f(X; \beta)+e , \  \  \  E(e)=0.\]</span> 여기서 <span class="math inline">\(f(\cdot)\)</span>는 알려진 회귀 모형 함수이고 <span class="math inline">\(\beta\)</span>는 모형을 결정짓는 모수 (parameter)인데, 예를 들어 <span class="math inline">\(f(X; \beta)=\beta_0 + \beta_1 X\)</span> 이면 단순 회귀 모형이 되는 것입니다. 따라서 <span class="math inline">\(\beta_0=0\)</span> 이고 <span class="math inline">\(\beta_1=1\)</span> 이라면 변수 <span class="math inline">\(X\)</span>를 사용한 측정은 측정 편향이 없다고 이야기 할수 있고 그렇지 않으면 측정 편향이 있는 것입니다.</p>
 <p>만약 처음 <span class="math inline">\(n_1\)</span> 개의 자료에서는 <span class="math inline">\((X,Y)\)</span> 를 관측하고 나머지 <span class="math inline">\(n_2\)</span> 개의 자료에서는 <span class="math inline">\(X\)</span> 를 관측하는 경우, 우리는 처음 <span class="math inline">\(n_1\)</span> 개의 자료를 이용하여 <span class="math inline">\(\beta\)</span> 값의 추정치인 <span class="math inline">\(\hat{\beta}\)</span> 를 얻어낼수 있고 이를 바탕으로 <span class="math inline">\(\hat{Y}_i = f( X_i; \hat{\beta})\)</span> 을 <span class="math inline">\(X\)</span>만 관측되는 자료에서도 계산해 낼수 있으므로 <span class="math inline">\(n_1+n_2\)</span> 개의 자료를 다 사용하게 되므로 <span class="math inline">\(n_1\)</span> 개만을 사용하는 것보다 더 효율적인 추정이 가능해 지는 것입니다.</p>
 </div>
 <div class="section level2">
@@ -144,8 +143,8 @@ $(document).ready(function () {
 <li><p>위의 보건 통계 사례에서 만약 <span class="math inline">\(Y= \beta_0 + \beta_1 X + e\)</span> 이 성립한다면 위의 two-phase sampling 을 이용한 전체 평균 추정량은 <span class="math display">\[ \hat{\mu}_{y, tp} = \frac{1}{n_1+n_2} \left\{ \sum_{i=1}^{n_1} y_i + \sum_{i=n_1+1}^{n_1+ n_2} \hat{y}_i \right\}
 \]</span> 이고 그의 분산은 대략 <span class="math display">\[
  V( \hat{\mu}_{y, tp}) = \frac{\sigma^2}{ n_1} \left\{ \frac{n_1}{n_1+n_2} \cdot \rho^2 + (1-\rho^2)  \right\} 
-\]</span> 으로 표현될수 있습니다. (여기서 <span class="math inline">\(\rho\)</span>는 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span>는 상관계수) 따라사 위의 보건 통계 사례에서는 <span class="math inline">\(n_1=500\)</span> 이고 <span class="math inline">\(n_2=4,500\)</span> 이므로 <span class="math inline">\(\rho^2=0.5\)</span> 인 경우 <span class="math inline">\(V( \hat{\mu}_{y, tp}) =0.0011 \sigma^2\)</span> 이므로 의료검진 만을 사용한 직접 조사와 비교하여 (<span class="math inline">\(0.001 \sigma^2\)</span>) 개선의 효과가 없어 보입니다. 하지만 <span class="math inline">\(\rho^2=0.9\)</span>이라면 분산이 <span class="math inline">\(0.00038 \sigma^2\)</span>으로 직접 조사와 비교할때 분산이 <span class="math inline">\(26.3 \%\)</span> 으로 줄어드는 효과를 가져옵니다. 이는 다시 말하면 3억 8천만원이 드는 직접 조사와 동일한 효과를 가져오는 디자인이 된다는 의미입니다.</p></li>
-<li>주어진 예산 하에서 최적의 샘플 크기를 결정하는 문제를 수학적으로 찾아낼수도 있습니다. 이 문제를 최적화 문제의 형태로 바꾸어 표현하면 다음과 같습니다.
+\]</span> 으로 표현될수 있습니다. (여기서 <span class="math inline">\(\rho\)</span>는 <span class="math inline">\(X\)</span>와 <span class="math inline">\(Y\)</span>는 상관계수) 따라서 위의 보건 통계 사례에서는 <span class="math inline">\(n_1=500\)</span> 이고 <span class="math inline">\(n_2=4,500\)</span> 이므로 <span class="math inline">\(\rho^2=0.5\)</span> 인 경우 <span class="math inline">\(V( \hat{\mu}_{y, tp}) =0.0011 \sigma^2\)</span> 이므로 의료검진 만을 사용한 직접 조사와 비교하여 (<span class="math inline">\(0.001 \sigma^2\)</span>) 개선의 효과가 없어 보입니다. 하지만 <span class="math inline">\(\rho^2=0.9\)</span>이라면 분산이 <span class="math inline">\(0.00038 \sigma^2\)</span>으로 직접 조사와 비교할때 분산이 <span class="math inline">\(26.3 \%\)</span> 으로 줄어드는 효과를 가져옵니다. 이는 다시 말하면 3억 8천만원이 드는 직접 조사와 동일한 효과를 가져오는 디자인이 된다는 의미입니다.</p></li>
+<li>주어진 예산 하에서 최적의 샘플 크기를 결정하는 문제는 수학적으로 찾아낼수 있습니다. 이 문제를 최적화 문제의 형태로 바꾸어 표현하면 다음과 같습니다.
 \begin{eqnarray*}
 &amp;&amp;  \mbox{Minimize }  V( \hat{\mu}_{y, tp})  = \frac{\sigma^2}{ n_1} \left\{ \frac{n_1}{n_1+n_2} \cdot \rho^2 + (1-\rho^2)  \right\}    \\  &amp;&amp; \mbox{ subject to  } c_1 n_1 + c_2 n_2 = C .
  \end{eqnarray*}
