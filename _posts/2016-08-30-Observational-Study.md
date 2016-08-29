@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "관측 연구"
+title: "Observational Study"
 author: "JKKim"
 date: "August 30, 2016"
 #output: html_document
