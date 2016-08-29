@@ -5,7 +5,7 @@ author: "JKKim"
 date: "August 30, 2016"
 #output: html_document
 categories: [statistics]
-tags:[experiment]
+tags:[Observational Study]
 ---
 
 
