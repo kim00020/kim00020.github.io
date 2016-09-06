@@ -204,13 +204,15 @@ $(document).ready(function () {
 <li><p>질병 진단법의 정확성은 두가지 측면에서 계산됩니다. 하나는 민감도(sensitivity)라고 불리는 것으로써 질병이 있는 사람 중에서 얼마나 높은 비율로 양성을 찾아내느냐 하는 것입니다. 다른 하나는 특이도(specificity)라고 불리는 것으로써 질병이 없는 사람 중에서 얼마나 많이 음성 결과를 얻어 내느냐를 나타냅니다. 위의 유방촬영검사는 80%의 민감도와 90%의 특이도를 가진다고 할수 있을 것입니다.</p></li>
 <li>베이즈 정리는 증거를 바탕으로 사건이 일어날 확률을 사후적으로 계산하는 방법에 관한 정리입니다. 위의 예에서 검사 결과가 양성이라는 것은 하나의 증거입니다. 이 증거를 통해서 해당 여성의 유병 확률은 1%에서 7.48% 로 높아지게 되는 것입니다. 이를 수식으로 나타내면 다음과 같습니다.
 \begin{eqnarray*}
-P(C=1 | T=1 ) &amp;=&amp; \frac{ P( C=1 , T=1)}{ P(T=1)}
+P(\mbox{Cancer }  \mid  \mbox{ Positve} ) &amp;=&amp; \frac{ P( \mbox{Cancer }  \&amp;  \mbox{ Positve} ) }{ P( \mbox{ Positive} )}
 \\
-&amp;=&amp; \frac{ P( C=1) P( T=1 \mid C=1)}{P( C=1) P( T=1 \mid C=1) + P( C=0) P( T=1 \mid C=0) }\\
-&amp;=&amp; \frac{ 0.01 \times 0.8}{ 0.01\times 0.8 + 0.99 \times 0.1  }=0.07476636 
-\end{eqnarray*}
-<p>이때, <span class="math inline">\(T=1\)</span> 는 검사 결과가 양성인 사건을 나타내고 <span class="math inline">\(C\)</span>는 질병 유무 (즉 <span class="math inline">\(C=1\)</span> 은 유방암 발생, <span class="math inline">\(C=0\)</span>은 정상)을 나타냅니다.</p></li>
-<li><p>이렇게 상태가 두개인 경우 (질병 유무)에는 사후 확률을 Odd 를 이용해서 계산하는게 더 쉽습니다. 위의 조건부 확률 공식을 사용하면 질병 유무에 대한 사후 확률의 비는 다음과 같이 표현될수 있습니다. <span class="math display">\[ \frac{P(C=1 \mid T=1)}{P(C=0 \mid T=1)} = \frac{P(T=1 \mid C=1) }{P(T=1 \mid C=0) } \times \frac{P(C=1) }{P(C=0)}. \]</span> 위의 식에서 등식 오른쪽의 두번째 항은 초기 확률의 비입니다. 거기에 <span class="math inline">\(T=1\)</span>이라는 증거를 반영한 보정 승수(evidence adjustment factor) <span class="math display">\[ \frac{P(T=1 \mid C=1)}{ P(T=1 \mid C=0)}\]</span> 을 곱해서 사후 확률의 비를 계산하게 되는 것입니다. 위의 유방암 검진 사례를 이용하면 초기 유방암 발생 비율은 암:정상의 비율이 1:99 입니다. 그런데 T=1 이라는 증거 보정 승수는 (0.8/0.1)=8 로 계산됩니다. 따라서 T=1 을 관측한 후의 암:정상의 비율은 8:99 가 되는 것입니다. 따라서 사후 확률은 8/(8+99)=0.07476636 으로 위의 결과와 동일해 지는 것입니다.</p></li>
+&amp;=&amp; \frac{ P( \mbox{Cancer} ) P( \mbox{ Positive} \mid \mbox{Cancer} )}{P( \mbox{Cancer}) P( \mbox{ Positive}  \mid \mbox{Cancer}) + P( \mbox{Normal} ) P( \mbox{ Positive} \mid \mbox{ Normal}) }\\
+&amp;=&amp; \frac{ 0.01 \times 0.8}{ 0.01\times 0.8 + 0.99 \times 0.1  }=0.07476636 . 
+\end{eqnarray*}</li>
+<li><p>이렇게 상태가 두개인 경우 (질병 유무)에는 사후 확률을 Odd 를 이용해서 계산하는게 더 쉽습니다. 위의 조건부 확률 공식을 사용하면 질병 유무에 대한 사후 확률의 비는 다음과 같이 표현될수 있습니다. <span class="math display">\[ \frac{  P(\mbox{ Cancer}  \mid  \mbox{ Positve} )
+}{
+P(\mbox{ Normal}  \mid  \mbox{ Positve} )
+} = \frac{P( \mbox{ Positive} \mid \mbox{ Cancer} ) }{P( \mbox{ Positive} \mid \mbox{ Normal}  ) } \times \frac{P( \mbox{Cancer} ) }{P(\mbox{Normal})}. \]</span> 위의 식에서 등식 오른쪽의 두번째 항은 초기 확률의 비입니다. 거기에 <span class="math inline">\(T=1\)</span>이라는 증거를 반영한 보정 승수(evidence adjustment factor) <span class="math display">\[ \frac{P( \mbox{ Positive} \mid \mbox{ Cancer} ) }{P( \mbox{ Positive} \mid \mbox{ Normal}  ) } \]</span> 을 곱해서 사후 확률의 비를 계산하게 되는 것입니다. 위의 유방암 검진 사례를 이용하면 초기 유방암 발생 비율은 암:정상의 비율이 1:99 입니다. 그런데 T=1 이라는 증거 보정 승수는 (0.8/0.1)=8 로 계산됩니다. 따라서 T=1 을 관측한 후의 암:정상의 비율은 8:99 가 되는 것입니다. 따라서 사후 확률은 8/(8+99)=0.07476636 으로 위의 결과와 동일해 지는 것입니다.</p></li>
 <li><p>만약 검사를 한번 더 했다면 어떻게 될까요? 즉, 검사를 두번 독립적으로 실시해서 둘다 양성이 나왔다면 어떻게 될까요? 그러면 증거 보정 승수는 8*8=64 으로 높아지고 따라서 사후 확률은 64/(64+99)=0.392638 으로 계산됩니다. 즉, 두번 다 양성 결과가 나왔다고 하더라도 그 사람이 실제 유방암 환자일 확률은 39% 밖에 되지 않는다는 것입니다.</p></li>
 <li><p>이처럼 확률은 증거를 통해서 계속 업데이트 됩니다. 유방암 관련 초기 확률이 1% 에서 일회의 양성 결과를 통해 7.48% 라는 값으로 업데이트 되었고 그 확률은 다시 한번의 양성 결과를 통과하면 39% 로 높아집니다. 즉, 1회 관측으로 얻어진 사후 확률이 제 2회 관측을 반영하는 사후 확률 계산에서는 사전 확률로 사용되는 것입니다.</p></li>
 </ol>
