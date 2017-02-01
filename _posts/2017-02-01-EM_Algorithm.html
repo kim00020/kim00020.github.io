@@ -129,7 +129,7 @@ $(document).ready(function () {
 </div>
 <div class="section level2">
 <h2>풀이</h2>
-<p>이러한 문제는 전형적인 결측 자료 (missing data) 예측 문제입니다. <span class="math inline">\(Y_k\)</span>를 영화 <span class="math inline">\(k\)</span>를 추천하는지를 나타내는 여부를 나타내는 지시변수 (추천이면 1의 값을 갖고, 비추이면 0의 값을 갖는 변수)라고 정의하면 각각의 고객에게서 우리는 <span class="math inline">\(Y_k\)</span>을 (1 또는 0로) 관측하거나 또는 <span class="math inline">\(Y_k\)</span>를 관측하지 못합니다. 각각의 고객에게서 <span class="math inline">\(Y_1, Y_2, ...., Y_K\)</span> 에 대한 정보를 수집되어 있는데 이중의 많은 값들은 결측(missing)이 됩니다.</p>
+<p>이러한 문제는 전형적인 결측 자료 (missing data) 예측 문제입니다. <span class="math inline">\(Y_k\)</span>를 영화 <span class="math inline">\(k\)</span>를 추천하는지를 나타내는 여부를 나타내는 지시변수 (추천이면 1의 값을 갖고, 비추이면 0의 값을 갖는 변수)라고 정의하면 각각의 고객에게서 우리는 <span class="math inline">\(Y_k\)</span>을 (1 또는 0로) 관측하거나 또는 <span class="math inline">\(Y_k\)</span>를 관측하지 못합니다. 각각의 고객에게서 <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span>, <span class="math inline">\(....,\)</span> <span class="math inline">\(Y_K\)</span> 에 대한 정보를 일부 수집하게 되는데 이중 많은 값들은 결측(missing)이 됩니다.</p>
 <p>예를들어 간단히 <span class="math inline">\(K=5\)</span>이라고 합시다. 즉, 이 회사에는 5개의 영화만 상영합니다. 그런데 홍길동이라는 사람은 이중에서 3개의 영화를 보았고 (영화 1,2,3 을 보았다고 합시다) 그 사람의 추천값이 <span class="math inline">\(Y_1=1\)</span>, <span class="math inline">\(Y_2=0\)</span>, <span class="math inline">\(Y_3=1\)</span> 라고 합시다. 그렇다면 그 사람에게 영화 4를 추천하는게 좋을까요 아니면 영화 5를 추천하는게 좋을까요?</p>
 <p>이에 대답하기 위해서는 현재의 고객 데이터로부터 전체 영화들의 선호도 관계를 추정한후 <span class="math inline">\(P(Y_4=1 \mid Y_1=1, Y_2=0, Y_3 =1 )\)</span>와 <span class="math inline">\(P(Y_5=1 \mid Y_1=1, Y_2=0, Y_3 =1 )\)</span>의 조건부 확률을 계산하여 이 두개의 조건부 확률 중에서 더 큰 값을 갖는 항목에 해당하는 영화를 추천해 주면 되는 것입니다. 이러한 조건부 확률을 추정하기 위해서는 EM 알고리즘이라는 방법론을 사용하는 것이 정석입니다.</p>
 <p>이러한 EM 알고리즘을 사용하기 위해 먼저 전체 변수의 결합 확률 <span class="math inline">\(P(Y_1=a, Y_2=b, Y_3=c, Y_4=d, Y_5=e):=\pi_{abcde}\)</span>을 정의합니다. 이 결합확률로부터 조건부 확률을 구할수 있습니다. 예를 들어 <span class="math inline">\(Y_4\)</span>와 <span class="math inline">\(Y_5\)</span>가 결측인 경우에 대해 <span class="math display">\[ P( Y_4=d , Y_5=e \mid X_1=a, Y_2=b, Y_3=c) = 
@@ -247,8 +247,8 @@ $(document).ready(function () {
 <div class="section level2">
 <h2>토론</h2>
 <ol style="list-style-type: decimal">
-<li><p>위의 사례는 EM 알고리즘의 가장 간단한 형태입니다. 다변량 범주형 자료에서 무응답이 있는 경우에는 위의 EM 알고리즘이 매우 간편하게 사용될수 있습니다. 그 외에도 EM 알고리즘은 엄청나게 많은 통계 모형 문제에 적용될수 있습니다. 앞으로 이와 관련된 내용을 좀더 다루려고 합니다.</p></li>
-<li><p>만약 0/1 의 binary 반응변수가 아닌 5점 척도의 ordinal data 라고 한다면 잠재변수에 대한 모형은 다항분포를 사용하는 것보다는 ordinal data 에 적합한 모형을 사용하는 것이 좋습니다. 예를 들면 cumulative logit model 같은 것이 그런 종류의 데이터에 더 적합한 모형입니다.</p></li>
+<li><p>위의 사례는 EM 알고리즘의 가장 간단한 형태입니다. 다변량 범주형 자료에서 무응답이 있는 경우에는 위의 EM 알고리즘이 매우 간편하게 사용될수 있습니다. 그 외에도 EM 알고리즘은 엄청나게 많은 통계 모형 추정 및 예측 문제에 적용될수 있습니다. 앞으로 이와 관련된 내용을 좀더 다루려고 합니다.</p></li>
+<li><p>위의 예제에서는 원자료가 다항분포를 따르는 것으로 가정한 것입니다. 만약 0/1 의 binary 반응변수가 아닌 5점 척도의 ordinal data 라고 한다면 잠재변수에 대한 모형은 다항분포를 사용하는 것보다는 ordinal data 에 적합한 모형을 사용하는 것이 좋습니다. 예를 들면 cumulative logit model 같은 것이 그런 종류의 데이터에 더 적합한 모형입니다.</p></li>
 <li><p>위의 사례에서 가상 데이터를 만드는 방법론은 일종의 fractional imputation 이라는 방법으로 이해할 수도 있습니다. 제가 2011년 Biometrika 라는 저널에 발표한 논문 “Parametric fractional imputation for missing data analysis”에도 소개된 방법론입니다. SAS 14.1 의 Proc Surveyimpute 라는 프로시져의 FEFI 옵션이 바로 이 방법론을 구현하는 것입니다. 제가 쓴 책에도 자세히 나와 있습니다. (링크 참조: <a href="https://www.crcpress.com/Statistical-Methods-for-Handling-Incomplete-Data/Kim-Shao/p/book/9781439849637" class="uri">https://www.crcpress.com/Statistical-Methods-for-Handling-Incomplete-Data/Kim-Shao/p/book/9781439849637</a>) 이와 관련한 R package 도 조만간 발표될 예정입니다.</p></li>
 </ol>
 <p>. .</p>
