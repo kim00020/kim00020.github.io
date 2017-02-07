@@ -1,41 +1,69 @@
-# Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-gems: [jekyll-paginate]
-title: 통계학 노트 
+###################################
+# Site wide configuration
+####################################
+#
+title: 통계학 노트
 email: jkim@iastate.edu
-description: > # this means to ignore newlines until "baseurl:"
-  Statistical Notes by J.K. Kim 
-baseurl: "" # the subpath of your site, e.g. /blog
+description: Statistical Notes by J.K. Kim 
 url: "http://jaekwangkim.com" # the base hostname & protocol for your site
 
 
-# About/contact
-author:
-  name:              Jae-kwang Kim
-  url:               https://public.jkim.iastate.edu
-  email:             jkim@iastate.edu
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          America/Chicago
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
 
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-#twitter_username: TWRITTER_USERNAME
-github_username: kim00020
-sass:
-  style: compressed
-# Pagination
-paginate: 5
-paginate_path: "page:num"
-# Build settings
-markdown: kramdown
-
-# Newsletter URL
-# mailchimp: "//bitwiser.us10.list-manage.com/subscribe/post?u=98dffea21944db66c8fa221ec&amp;id=8cc0f04ed1"
-
-# Analytics
-# ga_id: UA-47902363-1
-# ga_domain: bitwiser.in
-# disqus: bitwiser
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Jae-kwang Kim
+  avatar: leonids-logo.png
+  job: "Professor, Department of Statistics, ISU"
+  bio: "Bio"
+  email: jkim@iastate.edu
+  disqus-shortname:
+  twitter: #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: kim00020
+  gitlab: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username

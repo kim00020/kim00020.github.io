@@ -1,12 +1,11 @@
 ---
 layout: post 
 title: "회귀 모형"
-author: "JKKim"
-date: "February 5, 2017"
-
-output: html_document
-#categories: [statistics]
-#tags:[Monte Carlo simulation]
+author: JKKim
+modified: 2017-02-05
+tags: [회귀, 통계학 개론]
+comments: true
+share: true
 ---
 
 ## 예제 
@@ -17,7 +16,7 @@ output: html_document
 
 
 
-## 풀이  
+## 풀이
 
 다른 분야에서도 그렇겠지만 특히 통계학에서는 지금까지 관측된 자료를 바탕으로 일어나지 않은 사건에 대한 예측을 하는 것이 주된 관심사 중의 하나입니다. 위의 예제처럼 중간고사 성적을 $X$ 라고 하고 기말고사 성적을 $Y$라고 한다면 다른 학생들의 $X$와 $Y$의 관계를 이용해서 통계적 모형을 세운후 이 모형을 바탕으로 홍길동 학생의 특정 $X$값으로부터 $Y$ 값을 예측할수 있는데 이러한 통계 분석 기법을 회귀 분석이라고 부릅니다. 
 
@@ -57,8 +56,7 @@ $$ \hat{Y} = 48.95 + 0.247 * X$$
 
 
 
-
-![](regression1.png)
+![regression]({{ site.url }}/assets/regression1.png)
 
 
 .
