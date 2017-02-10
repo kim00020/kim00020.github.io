@@ -3,13 +3,19 @@ layout: post
 title: "통제된 실험"
 author: "JKKim"
 date: "August 29, 2016"
-categories: [statistics]
+
+
+
+comments: true
+share: true
+
+
 ---
 
 
 
 
-## 예제 
+# 예제 
 
 소아마비 백신을 개발한 조너스 소크 박사 이야기를 들어보셨나요? (아래 링크 참조 <https://ko.wikipedia.org/wiki/조너스_소크>) 
 
@@ -22,7 +28,7 @@ categories: [statistics]
 
 
 
-## 풀이  
+# 풀이  
 
 통계학에서 가장 중요한 개념 중의 하나는 통제(control)입니다. 비교를 제대로 하려면 동일한 조건에서 비교를 해야 한다는 것이지요. 즉, 실험군(treatment group)과 대조군(control group)과의 차이는 treatment 여부 외에는 없어야 한다는 것입니다. 그래야 인과관계에 대한 과학적인 결론을 얻어낼수 있다는 것입니다. 
 
@@ -37,7 +43,7 @@ $$ E( Y_1 \mid I=1) - E(Y_0 \mid I=0) $$
 
 
 
-## 토론 
+# 토론 
 
 1. 통계학은 과학적인 비교를 하고자 하는 학문입니다. 비교의 핵심은 비교 대상을 잘 찾는 것입니다. 만약 비교 대상이 모든 조건에서 잘 통제되었다면 실험후 두 집단의 차이는 treatment 에 의한 효과일 확률이 큽니다. 통제된 실험을 하기 위해서는 random 하게 두 그룹을 나누어 주는 방법이 사용될수 있습니다. 이런 실험을 randomized controlled experiment 라고 합니다. 
 

@@ -3,9 +3,12 @@ layout: post
 title: "포아송 프로세스"
 author: "JKKim"
 date: "October 6, 2016"
-output: html_document
-#categories: [statistics]
-#tags:[Bayes Theorem]
+
+
+comments: true
+share: true
+
+
 ---
 
 

@@ -3,15 +3,16 @@ layout: post
 title: "표본 분포"
 author: "JKKim"
 date: "October 11, 2016"
-output: html_document
-#categories: [statistics]
-#tags:[Sampling distribution]
+
+comments: true
+share: true
+
 ---
 
 
 
 
-## 예제 
+# 예제 
 
 
 
@@ -41,7 +42,7 @@ $$ n > \left( \frac{ 1.96}{d} \right)^2 p (1-p)$$
 
 
 
-## 토론 
+# 토론 
 
 1. 
 어떤 특정 모집단에서 얻어진 $n$ 개의 자료를 $X_1, \cdots, X_n$ 이라고 할때 이 자료로부터 얻어지는 특정 통계량 $Y=u(X_1,  \cdots, X_n)$과 관련된 통계적 성질에 더 관심이 많을 경우가 있습니다. 이때 얻어지는 통계량 $Y$의 확률 분포를 표본 분포(sampling distribution)이라고 부릅니다. 즉, 통계량 $Y$의 표본 분포는 자료 $(X_1, \cdots, X_n)$의 확률분포로 부터 유도되는 것입니다. 

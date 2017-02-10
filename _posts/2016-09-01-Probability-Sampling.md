@@ -3,9 +3,12 @@ layout: post
 title: "확률 표본"
 author: "JKKim"
 date: "September 1, 2016"
-output: html_document
-#categories: [statistics]
-#tags:[Observational Study]
+
+
+comments: true
+share: true
+
+
 ---
 
 

@@ -4,9 +4,9 @@ title: "Monte Carlo 시뮬레이션"
 author: "JKKim"
 date: "September 28, 2016"
 
-output: html_document
-#categories: [statistics]
-#tags:[Monte Carlo simulation]
+comments: true
+share: true
+
 ---
 
 ## 예제 

@@ -3,9 +3,12 @@ layout: post
 title: "조건부 확률"
 author: "JKKim"
 date: "September 4, 2016"
-output: html_document
-#categories: [statistics]
-#tags:[Conditional Probability]
+
+
+comments: true
+share: true
+
+
 ---
 
 

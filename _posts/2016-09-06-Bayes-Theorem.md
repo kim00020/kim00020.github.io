@@ -3,9 +3,12 @@ layout: post
 title: "베이즈 정리"
 author: "JKKim"
 date: "September 6, 2016"
-output: html_document
-#categories: [statistics]
-#tags:[Bayes Theorem]
+
+
+comments: true
+share: true
+
+
 ---
 
 
@@ -24,8 +27,7 @@ output: html_document
 
 
 
-![Mammography 검진법](Mammogram.jpg)
-
+![Mammography 검진법]({{ site.url }}/assets/Mammogram.jpg)
 
 
 ## 풀이  
