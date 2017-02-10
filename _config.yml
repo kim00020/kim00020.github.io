@@ -34,11 +34,11 @@ kramdown:
 #
 owner:
   name: Jae-kwang Kim
-  avatar: leonids-logo.png
+  avatar: leonids-logo.jpg
   job: "Professor, Department of Statistics, ISU"
   bio: "Bio"
   email: jkim@iastate.edu
-  disqus-shortname: http-jaekwangkim-com
+  disqus-shortname: jae_kwang_kim
   twitter: #username
   facebook: #username
   google:
