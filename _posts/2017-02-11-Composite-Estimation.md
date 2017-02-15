@@ -55,7 +55,7 @@ $$ \hat{Y}_i  \sim N( X_i \gamma , X_i \sigma^2 + v_i )
 # 토론 
 
 1. 
-모수 추정을 위해서 Iterative reweighted least squares method 를 사용할수 있는데 $\gamma$와 $\sigma^2$을 번갈아가면서 추정하는 것입니다. 이를 위해서 $$W_i (\sigma^2)=1/( X_i \sigma^2 + v_i )$$으로 정의하면 $\gamma$의 추정은 
+모수 추정을 위해서 최대우도 추정법을 사용하거나  Iterative reweighted least squares method 를 사용할수 있는데 후자는 $\gamma$와 $\sigma^2$을 번갈아가면서 추정하는 것입니다. 이를 위해서 $$W_i (\sigma^2)=1/( X_i \sigma^2 + v_i )$$으로 정의하면 $\gamma$의 추정은 
 $$ \sum_i W_i ( \hat{\sigma}^2 )  ( \hat{Y}_i - X_i \gamma)^2 $$
 을 최소화 하는 값인 
 \begin{equation}
