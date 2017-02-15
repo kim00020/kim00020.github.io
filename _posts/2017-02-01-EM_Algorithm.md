@@ -83,7 +83,7 @@ $$P( Y_1=a , Y_3=c, Y_5=e \mid  Y_2=b, Y_4=d) =  \frac{ \pi_{abcde}}{\sum_{a=0}^
 2. 위의 예제에서는 원자료가 다항분포를 따르는 것으로 가정한 것입니다. 만약 0/1 의 binary 반응변수가 아닌 5점 척도의 ordinal data 라고 한다면 잠재변수에 대한 모형은 다항분포를 사용하는 것보다는 ordinal data 에 적합한 모형을 사용하는 것이 좋습니다. 예를 들면 cumulative logit model 같은 것이 그런 종류의 데이터에 더 적합한 모형입니다. 
 
 
-3. 위의 사례에서 가상 데이터를 만드는 방법론은 일종의 fractional imputation 이라는 방법으로 이해할 수도 있습니다. 제가 2011년 Biometrika 라는 저널에 발표한 논문 "Parametric fractional imputation for missing data analysis"에도 소개된 방법론입니다. SAS 14.1 의 Proc Surveyimpute 라는 프로시져의 FEFI 옵션이 바로 이 방법론을 구현하는 것입니다. 제가 쓴 책에도 자세히 나와 있습니다. (링크 참조: <https://www.crcpress.com/Statistical-Methods-for-Handling-Incomplete-Data/Kim-Shao/p/book/9781439849637>) 이와 관련한 R package 도 조만간 발표될 예정입니다. 
+3. 위의 사례에서 가상 데이터를 만드는 방법론은 일종의 fractional imputation 이라는 방법으로 이해할 수도 있습니다. 제가 2011년 Biometrika 라는 저널에 발표한 논문 "Parametric fractional imputation for missing data analysis"에도 소개된 방법론입니다. SAS 14.1 의 Proc Surveyimpute 라는 프로시져의 FEFI 옵션이 바로 이 방법론을 구현하는 것입니다. 제가 쓴 책에도 자세히 나와 있습니다. (링크 참조: <https://www.crcpress.com/Statistical-Methods-for-Handling-Incomplete-Data/Kim-Shao/p/book/9781439849637>) 
 
 
 .
