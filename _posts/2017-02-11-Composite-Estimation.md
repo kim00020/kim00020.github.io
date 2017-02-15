@@ -86,7 +86,7 @@ $$
 으로 표현되고 $$p_i = p(\gamma_0 + X_i \gamma_1)$$입니다.  따라서 
 $$ \hat{Y}_i \sim \left[  p(\gamma_0 + X_i \gamma_1) , v_i + p_i (1-p_i) \sigma^2 \right] 
 $$
-이 얻어지므로 토론 1에서 소개한 Iterative reweighted least squares method  방법을 사용하여 모수를 추정할수 있습니다. 이렇게 해서 모수 추정을 하게 되면 $Y_{10}$의  예측은 $$\hat{Y}_{10} = p(\hat{\gamma}_0 + X_{10} \hat{\gamma}_1)$$으로 계산됩니다. 
+이 얻어지므로 토론 1에서 소개한 Iterative reweighted least squares method  방법을 사용하여 모수를 추정할수 있습니다. 이렇게 해서 모수 추정을 하게 되면 $$Y_{10}$$의  예측은 $$\hat{Y}_{10} = p(\hat{\gamma}_0 + X_{10} \hat{\gamma}_1)$$으로 계산됩니다. 
 위의 자료를 적용하면 $$\hat{Y}_{10}$$=95.2%이 얻어집니다. 
 
 
