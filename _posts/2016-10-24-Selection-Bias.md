@@ -33,10 +33,10 @@ share: true
 위의 사건은 여론조사 분야에서 매우 유명한 사건입니다. 모집단이 $\{y_1, \cdots, y_N\}$으로 구성되었다고 하고 이중 일부를 표본으로 뽑아서 이 표본 평균으로 추정한다고 할때 모수는 $\theta=N^{-1} \sum_{i=1}^N y_i=\bar{Y}$으로 표현될수 있고 표본 평균은 $\hat{\theta}= (\sum_{i=1}^N \delta_i y_i )/ (\sum_{i=1}^N \delta_i )$으로 표현될수 있는데 이때 $\delta_i$는 원소 $i$가 표본에 뽑히면 1 아니면 0 을 갖는 지시변수입니다. 
 
 이때 추정량 $\hat{\theta}$의 모수 $\theta$에 대한 편향은 $Bias(\hat{\theta})= E( \hat{\theta})- \theta$으로 정의될수 있는데 $\delta_i \sim Bernoulli(\pi_i)$ 이라 가정하면 
-\begin{align*}
-Bias( \hat{\theta}) \doteq & \frac{\sum_{i=1}^N \pi_i (y_i -\theta) }{\sum_{i=1}^N \pi_i} \\
-= & Corr( \pi, Y) \times CV(\pi) \times CV(Y) \times \theta
-\end{align*}
+\begin{eqnarray}
+Bias( \hat{\theta}) &\doteq & \frac{\sum_{i=1}^N \pi_i (y_i -\theta) }{\sum_{i=1}^N \pi_i} \\
+&= & Corr( \pi, Y) \times CV(\pi) \times CV(Y) \times \theta
+\end{eqnarray}
 으로 계산되는데 여기서 
 $$ CV(\pi)= \frac{\sqrt{V(\pi)}}{ E(\pi)} = \frac{ \sqrt{ \sum_{i=1}^N ( \pi_i - \bar{\pi})^2/N} }{ \bar{\pi} } $$
 이고 (여기서 $\bar{\pi}=\sum_{i=1}^N \pi_i/N$)
