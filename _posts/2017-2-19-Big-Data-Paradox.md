@@ -64,7 +64,7 @@ $$\hat{\mu}_g - \mu_g = \rho_{R,g} \times \sigma_g \times \sqrt{\frac{N-n}{n}}  
 \begin{equation}
 E[ \hat{\mu}_g - \mu_g]^2 = D_I \times D_O \times D_U.
 \end{equation}
-여기서 $$D_I = E[ \rho_{R,g}^2]$$으로 표현되는데 Defect index 라고 불리우는데 Data quality 를 나타내는 지표이고, $$D_O =(N-n)/n= (1-f)/f$$로써 Dropout Odds 라고 부를수 있는데 Data quantity 를 나타내는 지표이고, $$D_u=\sigma_g^2$$은 Data uncertainty 라고 부를수 있는데 이는 problem difficulty 를 나타내는 지표라고 이해할수 있습니다. 통계의 핵심은 결국 data quality, data quantile, and data uncertainty 로 요약될수 있습니다. 
+여기서 $$D_I = E[ \rho_{R,g}^2]$$으로 표현되는데 Defect index 라고 불리우는데 Data quality 를 나타내는 지표이고, $$D_O =(N-n)/n= (1-f)/f$$로써 Dropout Odds 라고 부를수 있는데 Data quantity 를 나타내는 지표이고, $$D_u=\sigma_g^2$$은 Data uncertainty 라고 부를수 있는데 이는 problem difficulty 를 나타내는 지표라고 이해할수 있습니다. 통계의 핵심은 결국 data quality, data quantity, and data uncertainty 로 요약될수 있습니다. 
 
 
 3. 위의 공식을 바탕으로 빅데이터의 유효표본수를 구할수 있습니다. 즉, 현재 주어진 빅데이터의 표본수와 동일한 MSE (평균오차제곱)을 구현하는 단순임의표본의 표본수는 얼마인가를 계산하는 것입니다. (유효표본수와 관련된 설명은 저의 이전 포스팅 "유효표본수"를 참고하시기 바랍니다.) 공식은 다음과 같습니다. (여기서 $$f=n/N$$입니다)
